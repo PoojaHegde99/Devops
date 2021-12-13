@@ -2,15 +2,15 @@
 
 **Members:** 
 
-_-Pooja Hegde_
+>_1. Pooja Hegde_
 
-_-Kanav Kamat_
+>_2. Kanav Kamat_
 
-_-Sohan Kulkarni_
+>_3. Sohan Kulkarni_
 
-_-Rakesh Aithal_
+>_4. Rakesh Aithal_
 
-_-Zaid Tergaon_
+>_5. Zaid Tergaon_
  
  
 **Pre Mid Sem**
