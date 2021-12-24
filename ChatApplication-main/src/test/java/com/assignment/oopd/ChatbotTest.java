@@ -15,7 +15,7 @@ public class ChatbotTest {
     String msg1 = "Hello";
     String msg2 = "Hey";
 
-    @Test
+//     @Test
     public void init(){
         initBrowser();
     }
