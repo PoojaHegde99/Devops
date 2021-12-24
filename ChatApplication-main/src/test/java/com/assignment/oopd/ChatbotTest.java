@@ -18,6 +18,7 @@ public class ChatbotTest {
     @Test
     public void init(){
         logger.info("Running a dummyTest");
+    }
         @Test
     void whenTestCase1_thenPrintTest1_1() {
         logger.info("Running When Case1: test1_1");
@@ -33,7 +34,7 @@ public class ChatbotTest {
         logger.info("Running When Case1: test1_3");
     }
         
-    }
+    
 
     public void initBrowser(){
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
