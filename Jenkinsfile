@@ -47,7 +47,7 @@ pipeline {
             cleanWs()
         }
     }
-}
+
     }
 }
 def doBuild() {
