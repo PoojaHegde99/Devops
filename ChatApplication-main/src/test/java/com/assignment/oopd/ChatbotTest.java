@@ -17,7 +17,21 @@ public class ChatbotTest {
 
     @Test
     public void init(){
-        System.out.println("Hello World!!");
+        logger.info("Running a dummyTest");
+        @Test
+    void whenTestCase1_thenPrintTest1_1() {
+        logger.info("Running When Case1: test1_1");
+    }
+
+    @Test
+    void whenTestCase1_thenPrintTest1_2() {
+        logger.info("Running When Case1: test1_2");
+    }
+
+    @Test
+    void whenTestCase1_thenPrintTest1_3() {
+        logger.info("Running When Case1: test1_3");
+    }
         
     }
 
