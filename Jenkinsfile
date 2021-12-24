@@ -1,6 +1,3 @@
-
-
-
 #!/usr/bin/env groovy
 @Library(['piper-lib-os', 'piper-lib']) _
 //Enables GitHub hook trigger for GITScm polling at job/branch level
