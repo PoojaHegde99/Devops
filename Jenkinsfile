@@ -28,9 +28,8 @@ pipeline {
                  sh "docker version"
                  sh "docker build -t 821788/archiveartifacts:newtag -f Dockerfile ."
                  sh "docker run -p 8081:8081 -d 821788/archiveartifacts:newtag"
-                 withDockerRegistry(credentialsId: 'docker-hub-registry') {
                 sh "docker push 821788/archiveartifacts:newtag"
-            }
+            
         }
    }
     }
