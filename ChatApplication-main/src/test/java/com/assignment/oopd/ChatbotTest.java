@@ -17,7 +17,7 @@ public class ChatbotTest {
 
     @Test
     public void init(){
-       console.log("Hello world!!");
+      
     }
        
 
