@@ -6,8 +6,9 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+               sh 'mvn -f ChatApplication-main/pom.xml clean package'
             }
         }
     }
 }
+
