@@ -17,7 +17,7 @@ public class ChatbotTest {
 
 //     @Test
     public void init(){
-        initBrowser();
+        
     }
 
     public void initBrowser(){
