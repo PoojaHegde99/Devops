@@ -16,6 +16,11 @@ pipeline {
                sh 'mvn -f ChatApplication-main/pom.xml clean package'
             }
         }
+        stage('Report') { 
+            steps {
+               junit 'ChatApplication-main/target/surefire-reports/*.xml'
+            }
+        }
     }
     
 }
