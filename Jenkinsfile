@@ -19,7 +19,7 @@ pipeline {
         stage('Report') { 
             steps {
                junit 'ChatApplication-main/target/surefire-reports/*.xml'
-                publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'ChatApplication-main/target/site', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: ''])
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'ChatApplication-main/target/surefire-reports/Surefire suite/*.html', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
             }
         }
         stage('package') { 
