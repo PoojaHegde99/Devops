@@ -36,11 +36,22 @@ pipeline {
             }
         }
         
-    }
+                 
+        }
+        // TO BE DONE
+        // stage('IPScan and PPMS') {
+        //     when {
+        //         branch 'dev'
+        //     }
+        //     steps {
+        //         ppms()
+        //     }
+        // }
+
     post {
         always {
            
-            setupPipelineEnvironment script: this
+            // setupPipelineEnvironment script: this
             // mailSendNotification script: this
         }
         cleanup {
@@ -48,8 +59,8 @@ pipeline {
         }
     }
 
-    }
-}
+    
+
 def doBuild() {
     lock(resource: "${env.JOB_NAME}/40", inversePrecedence: true) {
         milestone 40
