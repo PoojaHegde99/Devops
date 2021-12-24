@@ -10,12 +10,12 @@ pipeline {
             }
         }
     }
-    stages {
+ 
         stage('Build') { 
             steps {
                sh 'mvn -f ChatApplication-main/pom.xml clean package'
             }
         }
-    }
+    
 }
 
