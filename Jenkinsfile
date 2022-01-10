@@ -4,7 +4,7 @@ pipeline {
       PATH=" /usr/share/apache-maven:$PATH"
        AWS_ACCOUNT_ID=" 030639988736"
        AWS_DEFAULT_REGION="us-east-2"
-       IMAGE_REPO_NAME=" jenkins-devops"
+       IMAGE_REPO_NAME="jenkins-devops"
        IMAGE_TAG="latest"
        REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
         
