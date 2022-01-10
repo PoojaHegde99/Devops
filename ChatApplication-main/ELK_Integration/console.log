@@ -1,0 +1,271 @@
+Started by user Devops Assignment
+Obtained Jenkinsfile from git https://github.com/PoojaHegde99/Devops.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/ChatApplication_Pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: git
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/ChatApplication_Pipeline/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/PoojaHegde99/Devops.git # timeout=10
+Fetching upstream changes from https://github.com/PoojaHegde99/Devops.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.32.0'
+ > git fetch --tags --force --progress -- https://github.com/PoojaHegde99/Devops.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision f4aedc13e25d2ab9b5478efa7202e2b7b88727fb (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f f4aedc13e25d2ab9b5478efa7202e2b7b88727fb # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk a42b2ac5153ac4a96940db5d3194a5bd03deb844 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] sh
++ mvn -f ChatApplication-main/pom.xml clean test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building oopd 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ oopd ---
+[INFO] Deleting /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ oopd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.4:compile (default-compile) @ oopd ---
+[INFO] Compiling 6 source files to /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ oopd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.4:testCompile (default-testCompile) @ oopd ---
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ oopd ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.assignment.oopd.ChatbotTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.612 s - in com.assignment.oopd.ChatbotTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 8.795 s
+[INFO] Finished at: 2022-01-10T11:19:41Z
+[INFO] Final Memory: 29M/69M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ mvn -f ChatApplication-main/pom.xml clean install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building oopd 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ oopd ---
+[INFO] Deleting /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ oopd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.4:compile (default-compile) @ oopd ---
+[INFO] Compiling 6 source files to /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ oopd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.4:testCompile (default-testCompile) @ oopd ---
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ oopd ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.assignment.oopd.ChatbotTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.575 s - in com.assignment.oopd.ChatbotTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ oopd ---
+[INFO] Building jar: /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/oopd-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.5:repackage (repackage) @ oopd ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ oopd ---
+[INFO] Installing /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/oopd-0.0.1-SNAPSHOT.jar to /var/lib/jenkins/.m2/repository/com/assignment/oopd/0.0.1-SNAPSHOT/oopd-0.0.1-SNAPSHOT.jar
+[INFO] Installing /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/pom.xml to /var/lib/jenkins/.m2/repository/com/assignment/oopd/0.0.1-SNAPSHOT/oopd-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 11.358 s
+[INFO] Finished at: 2022-01-10T11:19:57Z
+[INFO] Final Memory: 34M/98M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (package)
+[Pipeline] sh
++ mvn -f ChatApplication-main/pom.xml clean package -DskipTests=true
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Building oopd 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.1.0:clean (default-clean) @ oopd ---
+[INFO] Deleting /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ oopd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 18 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.4:compile (default-compile) @ oopd ---
+[INFO] Compiling 6 source files to /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ oopd ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.4:testCompile (default-testCompile) @ oopd ---
+[INFO] Compiling 1 source file to /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ oopd ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ oopd ---
+[INFO] Building jar: /var/lib/jenkins/workspace/ChatApplication_Pipeline/ChatApplication-main/target/oopd-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.4.5:repackage (repackage) @ oopd ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 8.542 s
+[INFO] Finished at: 2022-01-10T11:20:09Z
+[INFO] Final Memory: 33M/99M
+[INFO] ------------------------------------------------------------------------
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Logging into AWS ECR)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ docker login --username AWS --password-stdin 030639988736.dkr.ecr.us-east-2.amazonaws.com
++ aws ecr get-login-password --region us-east-2
+WARNING! Your password will be stored unencrypted in /var/lib/jenkins/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Building image)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] sh
++ docker build -t jenkins-devops:latest .
+Sending build context to Docker daemon  81.54MB
+
+Step 1/3 : FROM openjdk:11
+ ---> 5505a9a39df1
+Step 2/3 : COPY ChatApplication-main/target/*.jar springboot-docker.jar
+ ---> bbabd80e985f
+Step 3/3 : ENTRYPOINT ["java", "-jar", "springboot-docker.jar"]
+ ---> Running in c9d15e983203
+Removing intermediate container c9d15e983203
+ ---> 429d91f4beef
+Successfully built 429d91f4beef
+Successfully tagged jenkins-devops:latest
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Pushing to ECR)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ docker tag jenkins-devops:latest 030639988736.dkr.ecr.us-east-2.amazonaws.com/jenkins-devops:latest
+[Pipeline] sh
++ docker push 030639988736.dkr.ecr.us-east-2.amazonaws.com/jenkins-devops:latest
+The push refers to repository [030639988736.dkr.ecr.us-east-2.amazonaws.com/jenkins-devops]
+2e7a05279436: Preparing
+3bb5258f46d2: Preparing
+832e177bb500: Preparing
+f9e18e59a565: Preparing
+26a504e63be4: Preparing
+8bf42db0de72: Preparing
+31892cc314cb: Preparing
+11936051f93b: Preparing
+8bf42db0de72: Waiting
+31892cc314cb: Waiting
+11936051f93b: Waiting
+832e177bb500: Pushed
+f9e18e59a565: Pushed
+2e7a05279436: Pushed
+8bf42db0de72: Pushed
+31892cc314cb: Pushed
+3bb5258f46d2: Pushed
+26a504e63be4: Pushed
+11936051f93b: Pushed
+latest: digest: sha256:c67babccf536dcff46785b4fb2d43924650fca59bc21b4b47baa9d75778f41a1 size: 2007
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
